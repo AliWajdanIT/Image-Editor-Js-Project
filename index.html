@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/086d31cf1d.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Easy Image Editor</title>
+  </head>
+  <body class="bg-slate-800 flex justify-center items-center h-screen">
+    <div class="card p-3 rounded-lg h-3/4 w-3/5 bg-slate-100">
+      <h2 class="text-xl mb-4">Easy Image Editor</h2>
+      <div
+        class="main flex border border-blue-950 p-2 w-full h-3/4 justify-between"
+      >
+        <div class="edit-panel border border-blue-950 p-3 w-2/6 mr-3">
+          <h3 class="text-xs mb-2">Filters</h3>
+          <div class="filter-btns grid grid-cols-2 gap-2 mb-4">
+            <button
+              id="brightness"
+              class="filter-btn h-10 w-17 border p-2 border-blue-950 bg-slate-50 active"
+            >
+              Brightness
+            </button>
+            <button
+              id="saturation"
+              class="filter-btn h-10 w-17 border p-2 border-blue-950 bg-slate-50"
+            >
+              Saturation
+            </button>
+            <button
+              id="inversion"
+              class="filter-btn h-10 w-17 border p-2 border-blue-950 bg-slate-50"
+            >
+              Inversion
+            </button>
+            <button
+              id="grayscale"
+              class="filter-btn h-10 w-17 border p-2 border-blue-950 bg-slate-50"
+            >
+              Grayscale
+            </button>
+          </div>
+          <div class="input flex justify-between mb-2">
+            <h4 class="bri">Brightness</h4>
+            <h4 class="perc">100%</h4>
+          </div>
+          <input
+            type="range"
+            value="100"
+            min="0"
+            max="200"
+            class="w-full mb-4"
+          />
+
+          <h3 class="mb-2">Rotate/Flip</h3>
+          <div class="rotate-btns grid grid-cols-2 gap-2">
+            <button
+              id="right-rotate"
+              class="rotate-btn h-10 w-16 border p-2 border-blue-950 bg-slate-50"
+            >
+              <i class="fa-solid fa-rotate-right"></i>
+            </button>
+            <button
+              id="left-rotate"
+              class="rotate-btn h-10 w-16 p-2 border border-blue-950 bg-slate-50"
+            >
+              <i class="fa-solid fa-rotate-left"></i>
+            </button>
+            <button
+              id="vertical-flip"
+              class="flip-btn h-10 w-16 border p-2 border-blue-950 bg-slate-50"
+            >
+              <box-icon name="reflect-vertical"></box-icon>
+            </button>
+            <button
+              id="horizontal-flip"
+              class="flip-btn h-10 w-16 border p-2 border-blue-950 bg-slate-50"
+            >
+              <box-icon name="reflect-horizontal"></box-icon>
+            </button>
+          </div>
+        </div>
+        <div class="image w-2/3 h-full border border-blue-950 overflow-hidden">
+          <img
+            src=""
+            alt="Selected Image"
+            class="w-full h-full object-contain"
+          />
+        </div>
+      </div>
+      <div class="last flex justify-between mt-4">
+        <input type="file" class="chooseinput hidden" accept="image/*" />
+        <button
+          class="reset-btn h-10 w-17 border p-2 border-blue-950 bg-slate-200"
+        >
+          Reset Filters
+        </button>
+        <div class="img-btns">
+          <button
+            class="chooseimg-btn h-11 w-18 border px-3 border-blue-950 bg-blue-900 rounded-md text-white"
+          >
+            Choose Image
+          </button>
+          <button
+            class="saveimg-btn h-11 w-18 border px-3 border-blue-950 bg-blue-500 rounded-md ml-1"
+          >
+            Save Image
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
